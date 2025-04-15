@@ -1,13 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: eks-sample-linux-service
+  name: nginx-service #need to match in ingress
   namespace: eks-sample-app
-  labels:
-    app: eks-sample-linux-app
 spec:
   selector:
-    app: eks-sample-linux-app
+    app: nginx
   type: NodePort
   ports:
     - protocol: TCP
