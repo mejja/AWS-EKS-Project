@@ -15,6 +15,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: eks-sample-linux-service
+              name: nginx-service #service where your app is running.
               port:
                 number: 80
