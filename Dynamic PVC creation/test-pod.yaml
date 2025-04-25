@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-test-pod
+spec:
+  containers:
+    - name: test-container
+      image: busybox  # A lightweight container for testing
+      command: ["sleep", "3600"]  # Keeps the container running for testing
+      volumeMounts:
+        - mountPath: /mnt/data  # The path inside the container where the PVC will be mounted
+          name: pvc-storage  # The name of the volume (it matches the volume name below)
+  volumes:
+    - name: pvc-storage
+      persistentVolumeClaim:
+        claimName: my-pvc  # The name of the PVC you created earlier
