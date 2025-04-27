@@ -7,4 +7,4 @@ parameters:
   type: gp3
   fsType: ext4
 reclaimPolicy: Delete
-volumeBindingMode: WaitForFirstConsumer
+volumeBindingMode: WaitForFirstConsumer # Ensure the volume is bound to a node before provisioning
